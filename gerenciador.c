@@ -8,9 +8,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct{
+	int dia;
+	int mes;
+	int ano;
+}Data;
+
 struct Produto{
 	int ID;
-};c
+	int data_entrega;
+};
 
 typedef struct Produto Produto;
 
