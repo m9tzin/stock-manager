@@ -4,32 +4,57 @@
  *
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct{
-	int dia;
-	int mes;
-	int ano;
-}Data;
-
-struct Produto{
+// Estrutura do produto
+typedef struct Produto{
 	int ID;
-	int data_entrega;
-};
+	int distancia; // Distancia ate o destinatario
+	int data_entrega; 
+	struct Produto *prox;
+}Produto;
 
-typedef struct Produto Produto;
-
-struct Lista{
+// Informações sobre a Lista de Produtos
+typedef struct Lista{
 	struct Produto *primeiro;
 	struct Produto *ultimo;
-};
+}Lista;
 
-typedef struct Lista Lista;
+/*Pointers auxiliares*/
+Produto *aux;
+Produto *anterior;
 
+/* malloc para a Lista */
+Lista* criarLista(){
+	Lista *lista = (Lista*)malloc(sizeof(Lista));
+	if(lista != NULL){
+		lista->primeiro = NULL;
+		lista->ultimo = NULL;
+	return lista;
+}
+
+/* malloc para os Produtos na Lista */
+void adicionarProduto(Lista *l){
+	Produto *novo = (Produto*)malloc(sizeof(Produto));
+	//get(ID);
+	//get(dist);
+	//get(data);
+}
+
+void compararProdutos(Lista *l, Produto *p){
+
+	return 0;
+}
+
+void ordenarProdutos(Lista *l, Produto *p){
+
+	return 0;
+}
 
 int main(void){
+	printf("Bem vindo ao Gerenciador de stoqueEstoque");
+	
 	return 0;
 }
 
