@@ -44,6 +44,9 @@ Lista* criarLista(){
 /* malloc para os Produtos na Lista */
 void adicionarProduto(Lista *l){
 	Produto *novo = (Produto*)malloc(sizeof(Produto));
+	if(novo == NULL){
+		printf("Erro de alocação.");
+	}
 	// Dados do Produto
 	novo->ID = get_int("Insira ID do produto: ");	//get(ID);
 	novo->distancia = get_int("Insira a distancia a percorrer (em km): ");
@@ -67,9 +70,18 @@ void ordenarProdutos(Lista *l){
 }
 
 void exibirProdutos(Lista *l){
+	int i = 0;
+	aux = l->inicio;
+
+	if(aux == NULL){
+		printf("Nenhum produto foi cadastrado.");
+		return;
+	}
+
 	while (aux != NULL){
-		int i = 0;
-		printf("Produto [%d]:\n ID: %d\n Dist: %d", i, aux->ID, aux->distancia);
+		printf("Produto [%d]:\n", i);
+		printf("ID: %d\n", aux->ID);
+		printf("Distância: %d\n", aux->distancia);
 		aux = aux->prox;
 		i++;
 	};
@@ -78,7 +90,12 @@ void exibirProdutos(Lista *l){
 int main(void){
 	printf("Bem vindo ao Gerenciador de Estoque");
 	printf("\n\n");
+	
 	Lista *lista = (Lista*)malloc(sizeof(Lista));
+	if(lista == NULL){
+		printf("Erro de alocação.");
+	}
+
 	adicionarProduto(lista);
 	printf("\n");
 	exibirProdutos(lista);
