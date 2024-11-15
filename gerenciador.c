@@ -121,7 +121,7 @@ void exibirProdutos(Lista *l){
 }
 
 int main(void){
-	printf("-------- Bem vindo(a) ao Gerenciador de Estoque ---------");
+	printf("-------- Bem vindo(a) ao GERENCIADOR DE ESTOQUES ---------");
 	printf("\n\n");
 	Lista *lista = (Lista*)malloc(sizeof(Lista));
 	if(lista == NULL){
