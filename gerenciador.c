@@ -1,11 +1,17 @@
 /* Gerenciador de Estoque
  *
- * Estoque.c
+ * Estrutura de Dados I
  *
+ * Gabriel Sales Gerardo
+ * João Pedro da Costa Reis
+ * Matheus Sousa Marinho
+ * 
+ * Gerenciador v1.0
  */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "libtools.h"
 
 // Estrutura do produto
 typedef struct Produto{
@@ -17,8 +23,8 @@ typedef struct Produto{
 
 // Informações sobre a Lista de Produtos
 typedef struct Lista{
-	struct Produto *primeiro;
-	struct Produto *ultimo;
+	struct Produto *inicio;
+	struct Produto *fim;
 }Lista;
 
 /*Pointers auxiliares*/
@@ -29,32 +35,50 @@ Produto *anterior;
 Lista* criarLista(){
 	Lista *lista = (Lista*)malloc(sizeof(Lista));
 	if(lista != NULL){
-		lista->primeiro = NULL;
-		lista->ultimo = NULL;
+		lista->inicio = NULL;
+		lista->fim = NULL;
 	return lista;
 }
 
 /* malloc para os Produtos na Lista */
 void adicionarProduto(Lista *l){
 	Produto *novo = (Produto*)malloc(sizeof(Produto));
-	//get(ID);
-	//get(dist);
-	//get(data);
+	get_int("Insira ID do produto: ");	//get(ID);
+	
+	if(l->inicio == NULL){
+		l->inicio = novo;
+		novo->prox = NULL;
+		l->fim = novo;
+	}else{
+		novo->prox = l->inicio;
+		l->inicio = novo;
+	}
 }
 
-void compararProdutos(Lista *l, Produto *p){
+void compararProdutos(Lista *l){
 
-	return 0;
 }
 
-void ordenarProdutos(Lista *l, Produto *p){
+void ordenarProdutos(Lista *l){
 
-	return 0;
+}
+
+void exibirProdutos(Lista *l){
+	while (aux != NULL){
+		int i = 0;
+		printf("Produto [i]:\n
+				ID: %d", aux->ID->num);
+		aux = aux->prox;
+	}
 }
 
 int main(void){
 	printf("Bem vindo ao Gerenciador de stoqueEstoque");
-	
+	printf("\n\n");
+	Lista *lista = (Lista*)malloc(sizeof(Lista));
+	adicionarProduto(lista);
+	exibirProdutos(lista);
+
 	return 0;
 }
 
