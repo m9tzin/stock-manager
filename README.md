@@ -4,10 +4,12 @@ A ideia é basicamente gerenciar de maneira mais inteligente um centro de gerenc
 <!-- ROADMAP -->
 ## Roadmap
 - [x] Criação do repositório
-- [ ] Identificar as estruturas de dados a serem utilizadas
+- [x] Identificar as estruturas de dados a serem utilizadas
 - [ ] Implementar estruturas e bibliotecas
 - [ ] Planejamento da logica de comparação das mercadorias
-- [ ] Interface de interação com usuário
+- [x] Interface de interação com usuário
+- [x] Função para remover produtos by ID
+- [ ] Verificações de inputs inválidos
 
 ## License
 Distributed under the MIT License. See `LICENSE.txt` for more information.
