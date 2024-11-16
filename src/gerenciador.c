@@ -146,27 +146,49 @@ Produto* dividir(Produto *inicio){
 	return lento;
 }
 
-// l - left, r - right
-Produto* mesclar(Produto *l, Produto *r, int(comparar*)(Produto*, Produto*)){
-
-	return x;
+// Passo do Merge
+// e - esquerda, d - direita
+Produto* mesclar(Produto *e, Produto *d, int(*comparar)(Produto*, Produto*)){
+	Produto *resultado = NULL;
+		
+	if(e == NULL){
+		return d;
+	}
+	if(d == NULL){
+		return e;
+	}
+	if(comparar(e,d) <= 0){
+		resultado = e;
+		resultado->prox = mesclar(e->prox, d, comparar);
+	}else{
+		resultado = d;
+		resultado->prox = mesclar(d->prox, e, comparar);
+	}
+	return resultado;
 }
 
 // mergeSort
-Produto* ordenarProdutos(Produto *inicio, int(comparar*)(Produto*, Produto*)){
-
-	return x;
+Produto* ordenarProdutos(Produto *inicio, int(*comparar)(Produto*, Produto*)){
+	if(inicio == NULL || inicio->prox == NULL){
+		return inicio;
+	}
+	
+	Produto *meio = dividir(inicio);
+	Produto *e = ordenarProdutos(inicio, comparar);
+	Produto *d = ordenarProdutos(meio, comparar);
+	
+		return mesclar(e, d, comparar);
 }
 
 // func completa
 void ordenarLista(Lista *l){
 	if(l->inicio == NULL){
 		printf("Nenhum produto cadastrado. Impossível realizar a ordenação.");
-		return -1;
+		return;
 	}
-	
 	l->inicio = ordenarProdutos(l->inicio, comparar);
-	printf("Lista ordenada com sucesso!");
+	printf("\nLista ordenada com sucesso!\n");
+	
 }
 
 int main(void){
@@ -180,7 +202,7 @@ int main(void){
 	do{	
 		printf("\n");
 		printf("-------[MENU]-------\n");
-		printf(" (1) Adicionar produto\n (2) Remover produto\n (3) Exibir produtos\n (4) Sair\n");
+		printf(" (1) Adicionar produto\n (2) Remover produto\n (3) Exibir produtos\n (4) Ordenar lista para entrega\n (5) Sair \n");
 		printf("-------------\n");
 		opc = get_int("Insira uma opção:\n ");	
 			switch(opc){
