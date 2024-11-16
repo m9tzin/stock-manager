@@ -18,7 +18,7 @@ A ideia é gerenciar um estoque de maneira a otimizar a produção de uma empres
 ### 1. Clone the repository:
 ```bash 
 git clone git@github.com:m9tzin/stock-manager.git
-cd stock-manager
+cd stock-manager/src
 ```
 ### 2. Compile:
 ```bash 
