@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "libtools.h"
 
-// Estrutura do produto
+// STRUCT
 typedef struct Produto{
 	int ID;
 	int distancia;
@@ -40,6 +40,7 @@ Lista* criarLista(){
 	return lista;
 }
 
+// FUNC
 void adicionarProduto(Lista *l){
 	Produto *novo = (Produto*)malloc(sizeof(Produto));
 	if(novo == NULL){
@@ -94,14 +95,6 @@ void removerProduto(Lista *l){
 	}
 }
 
-void compararProdutos(Lista *l){
-
-}
-
-void ordenarProdutos(Lista *l){
-
-}
-
 void exibirProdutos(Lista *l){
 	int i = 0;
 	aux = l->inicio;
@@ -118,6 +111,62 @@ void exibirProdutos(Lista *l){
 		aux = aux->prox;
 		i++;
 	};
+}
+
+// SORTING
+// comparar -> dividir -> mesclar -> ordenar 
+// se x-y>0 logo x>y, se x-y<0, logo y>x.
+int comparar(Produto *a, Produto *b){
+	// Primeiro caso: data de entrega
+	if(a->data_entrega != b->data_entrega){
+		return a->data_entrega - b->data_entrega;
+	}
+	// Segundo caso: distancia
+	if(a->distancia != b->distancia){
+		return a->distancia - b->distancia;
+	}
+	// Terceiro caso: ID
+	return a->ID - b->ID;
+}
+
+Produto* dividir(Produto *inicio){
+	// posicionando os ponteiros para splitar a lista
+	Produto *rapido = inicio;
+	Produto *lento = inicio;
+	Produto *anterior = NULL;
+
+	while( rapido != NULL && rapido->prox != NULL){
+		anterior = lento;
+		lento = lento->prox; // lentos à esquerda 
+		rapido = rapido->prox->prox; // rapidos à direita
+	}
+	if( anterior != NULL){
+		anterior->prox = NULL;
+	}
+	return lento;
+}
+
+// l - left, r - right
+Produto* mesclar(Produto *l, Produto *r, int(comparar*)(Produto*, Produto*)){
+
+	return x;
+}
+
+// mergeSort
+Produto* ordenarProdutos(Produto *inicio, int(comparar*)(Produto*, Produto*)){
+
+	return x;
+}
+
+// func completa
+void ordenarLista(Lista *l){
+	if(l->inicio == NULL){
+		printf("Nenhum produto cadastrado. Impossível realizar a ordenação.");
+		return -1;
+	}
+	
+	l->inicio = ordenarProdutos(l->inicio, comparar);
+	printf("Lista ordenada com sucesso!");
 }
 
 int main(void){
@@ -147,9 +196,12 @@ int main(void){
 					printf("\n\n");
 					break;
 				case 4: 
+					ordenarLista(lista);
+					break;
+				case 5: 
 					break;
 			}
-		}while(opc != 4);
+		}while(opc != 5);
 
 	return 0;
 }
