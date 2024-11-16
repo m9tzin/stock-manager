@@ -5,7 +5,7 @@ A ideia é gerenciar um estoque de maneira a otimizar a produção de uma empres
 ## Roadmap
 - [x] Criação do repositório
 - [x] Identificar as estruturas de dados a serem utilizadas
-- [ ] Implementar estruturas e bibliotecas
+- [x] Implementar estruturas de dados e bibliotecas
 - [ ] Planejamento da logica de comparação das mercadorias
 - [x] Interface de interação com usuário
 - [x] Função para remover produtos by ID
