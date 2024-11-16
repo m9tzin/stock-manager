@@ -15,16 +15,19 @@ A ideia é gerenciar um estoque de maneira a otimizar a produção de uma empres
 
 <!-- SETUP -->
 ## Setup
-1. Clone the repository:
-```bash git clone git@github.com:m9tzin/stock-manager.git
+###1. Clone the repository:
+```bash 
+git clone git@github.com:m9tzin/stock-manager.git
+cd stock-manager
 ```
-2. Move to repository:
-```bash cd ~/stock-manager
+###2. Compile:
+```bash 
+gcc -o gerenciar gererenciador.c
 ```
-3. Run .c file:
-```bash ./gerenciar
+###3. Run file:
+```bash 
+./gerenciar
 ```
-
 
 ## License
 Distributed under the MIT License. See `LICENSE.txt` for more information.
