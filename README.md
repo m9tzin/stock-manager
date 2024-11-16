@@ -6,12 +6,13 @@ A ideia é gerenciar um estoque de maneira a otimizar a produção de uma empres
 - [x] Criação do repositório
 - [x] Identificar as estruturas de dados a serem utilizadas
 - [x] Implementar estruturas de dados e bibliotecas
-- [ ] Planejamento da logica de comparação das mercadorias
+- [x] Planejamento da logica de comparação das mercadorias
 - [x] Interface de interação com usuário
 - [x] Função para remover produtos by ID
 - [ ] Verificações de inputs inválidos
-- [ ] Função compararProdutos();
-- [ ] Função ordenarProdutos(); 
+- [x] Função compararProdutos();
+- [x] Função ordenarProdutos(); 
+- [ ] Verificação dos IDs inseridos
 
 <!-- SETUP -->
 ## Setup
