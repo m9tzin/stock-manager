@@ -192,18 +192,13 @@ void ordenarLista(Lista *l){
 }
 
 int main(void){
-	printf("-------- Bem vindo(a) ao GERENCIADOR DE ESTOQUES ---------");
-	printf("\n\n");
 	Lista *lista = (Lista*)malloc(sizeof(Lista));
 	if(lista == NULL){
 		printf("Erro de alocação.");
 	}
 	int opc;
 	do{	
-		printf("\n");
-		printf("-------[MENU]-------\n");
-		printf(" (1) Adicionar produto\n (2) Remover produto\n (3) Exibir produtos\n (4) Ordenar lista para entrega\n (5) Sair \n");
-		printf("-------------\n");
+		exibirMenu();
 		opc = get_int("Insira uma opção:\n ");	
 			switch(opc){
 				case 1: 

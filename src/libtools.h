@@ -41,6 +41,14 @@ void get_string(const char *input, char *str, int length){
 	}
 }
 
+// Main menu
+void exibirMenu(){
+		printf("\n-------- Bem vindo(a) ao GERENCIADOR DE ESTOQUES ---------\n");
+		printf("-------[MENU]-------\n");
+		printf(" (1) Adicionar produto\n (2) Remover produto\n (3) Exibir produtos\n (4) Ordenar lista para entrega\n (5) Sair \n");
+		printf("-------------\n");
+};
+
 #endif
 
 
