@@ -1,7 +1,8 @@
 ## Stock Manager (Gerenciador de Estoque - Otimizando entregas)
-Gabriel Sales Gerardo
-João Pedro da Costa Reis
-Matheus Sousa Marinho
+### Autores:
+- Gabriel Sales Gerardo (matricula-id)
+- João Pedro da Costa Reis (matricula-id)
+- Matheus Sousa Marinho(matricula-id)
 
 <!-- IDEIA -->
 A ideia é gerenciar um estoque de maneira a otimizar a produção de uma empresa de logística. O sistema em si organiza as mercadorias conforme chegam, classificando-as com base em alguns critérios e armazenando em uma lista de prioridade. Através de estruturas de dados, é feita uma ordenação dando prioridade as que devem serem despachadas a fim de otimizar tanto o prazo da entrega como os custos referente ao transporte.
