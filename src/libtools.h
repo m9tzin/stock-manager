@@ -1,4 +1,3 @@
-/* Library */
 #ifndef LIBTOOLS_H
 #define LIBTOOLS_H
 
@@ -42,12 +41,21 @@ void get_string(const char *input, char *str, int length){
 }
 
 // Main menu
-void exibirMenu(){
-		printf("\n-------- Bem vindo(a) ao GERENCIADOR DE ESTOQUES ---------\n");
-		printf("-------[MENU]-------\n");
-		printf(" (1) Adicionar produto\n (2) Remover produto\n (3) Exibir produtos\n (4) Ordenar lista para entrega\n (5) Sair \n");
-		printf("-------------\n");
-};
+void exibirMenu() {
+    printf("\n");
+    printf("==========================================================\n");
+    printf("||          Bem-vindo(a) ao GERENCIADOR DE ESTOQUES     ||\n");
+    printf("==========================================================\n");
+    printf("||                      [ MENU ]                        ||\n");
+    printf("||------------------------------------------------------||\n");
+    printf("|| (1) Adicionar produto                                ||\n");
+    printf("|| (2) Remover produto                                  ||\n");
+    printf("|| (3) Exibir produtos                                  ||\n");
+    printf("|| (4) Ordenar lista para entrega                       ||\n");
+    printf("|| (5) Sair                                             ||\n");
+    printf("||------------------------------------------------------||\n");
+    printf("==========================================================\n");
+}
 
 #endif
 

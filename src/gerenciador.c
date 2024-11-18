@@ -15,6 +15,7 @@
 #include "libtools.h"
 
 // STRUCT
+
 typedef struct Produto{
 	int ID;
 	int distancia;
@@ -28,6 +29,7 @@ typedef struct Lista{
 }Lista;
 
 // Pointers aux
+
 Produto *aux;
 Produto *anterior;
 
@@ -41,6 +43,18 @@ Lista* criarLista(){
 }
 
 // FUNC
+
+int verificarID(Lista *l, int ID){
+	Produto *aux = l->inicio;
+	while(aux != NULL){
+		if(aux->ID == ID){
+			return 1;
+		}
+		aux = aux->prox;
+	}
+	return 0;
+}
+
 void adicionarProduto(Lista *l){
 	Produto *novo = (Produto*)malloc(sizeof(Produto));
 	if(novo == NULL){
@@ -48,6 +62,13 @@ void adicionarProduto(Lista *l){
 	}
 	// Dados do Produto
 	novo->ID = get_int("Insira ID do produto: ");	//get(ID);
+	
+	if(verificarID(l, novo->ID)){
+		printf("\nID já existente. Insira outro.\n\n");
+		free(novo);
+		return;
+	}
+	
 	novo->distancia = get_int("Insira a distancia a percorrer (em km): ");	//get(dist);
 	novo->data_entrega = get_int("Insira a data de entrega no formato DDMMAAA: ");	//get(data_entrega);
 
@@ -95,22 +116,34 @@ void removerProduto(Lista *l){
 	}
 }
 
-void exibirProdutos(Lista *l){
-	int i = 0;
-	aux = l->inicio;
-	if(aux == NULL){
-		printf("\nNenhum produto foi cadastrado.");
-		return;
-	}
-	while (aux != NULL){
-		printf("\n");
-		printf("Produto [%d]:\n", i);
-		printf("ID: %d\n", aux->ID);
-		printf("Distância: %d\n", aux->distancia);
-		printf("Data de entrega: %d\n", aux->data_entrega);
-		aux = aux->prox;
-		i++;
-	};
+void exibirProdutos(Lista *l) {
+    int i = 0;
+    Produto *aux = l->inicio;
+    
+
+    if (aux == NULL) {
+        printf("\n==========================================================\n");
+        printf("||                Nenhum produto cadastrado.            ||\n");
+        printf("==========================================================\n");
+        return;
+    }
+
+    printf("\n==========================================================\n");
+    printf("||                   LISTA DE PRODUTOS                 ||\n");
+    printf("==========================================================\n");
+
+    while (aux != NULL) {
+        printf("----------------------------------------------------------\n");
+        printf("|| Produto [%d]                                         ||\n", i);
+        printf("|| ID: %-47d ||\n", aux->ID);
+        printf("|| Distância (km): %-40d ||\n", aux->distancia);
+        printf("|| Data de entrega (DDMMYYYY): %-34d ||\n", aux->data_entrega);
+        printf("----------------------------------------------------------\n");
+        aux = aux->prox;
+        i++;
+    }
+
+    printf("==========================================================\n");
 }
 
 // SORTING
@@ -208,7 +241,6 @@ int main(void){
 					removerProduto(lista);
 					break;
 				case 3: 
-					printf("-----[PRODUTOS CADASTRADOS]------\n");
 					exibirProdutos(lista);
 					printf("\n\n");
 					break;
