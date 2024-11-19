@@ -17,7 +17,7 @@ A ideia é gerenciar um estoque de maneira a otimizar a produção de uma empres
 - [ ] Verificações de inputs inválidos
 - [x] Função compararProdutos();
 - [x] Função ordenarProdutos(); 
-- [ ] Verificação dos IDs inseridos
+- [x] Verificação dos IDs inseridos
 
 <!-- SETUP -->
 ## Setup
