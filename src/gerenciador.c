@@ -9,7 +9,7 @@
  * Gerenciador v1.1
  *
  */
-//gerenciador.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "libtools.h"
