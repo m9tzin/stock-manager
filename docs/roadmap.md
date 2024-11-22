@@ -1,6 +1,6 @@
 # Gerenciador de Estoque
 ## Algoritmo para otimização de entregas em centros de distribuição
-
+<!-- Autores -->
 ### Autores
 - **Matheus Sousa Marinho (202206132)**  
   Escola de Engenharia Elétrica, Mecânica e de Computação  
