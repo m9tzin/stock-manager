@@ -92,18 +92,6 @@ Portanto, a metodologia adotada foca na modularidade e na eficiência do sistema
 ## Apêndices
 ### Apêndice A - Diagrama de Blocos que ilustra o funcionamento geral do programa
 ![Diagrama de Blocos de Funcionamento](assets/Diagrama%20de%20Blocos%20de%20Funcionamento.png)
-<!-- ROADMAP -->
-## Roadmap
-- [x] Criação do repositório
-- [x] Identificar as estruturas de dados a serem utilizadas
-- [x] Implementar estruturas de dados e bibliotecas
-- [x] Planejamento da logica de comparação das mercadorias
-- [x] Interface de interação com usuário
-- [x] Função para remover produtos by ID
-- [ ] Verificações de inputs inválidos
-- [x] Função compararProdutos();
-- [x] Função ordenarProdutos(); 
-- [x] Verificação dos IDs inseridos
 
 <!-- SETUP -->
 ## Setup

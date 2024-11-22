@@ -6,7 +6,7 @@
  * João Pedro da Costa Reis
  * Matheus Sousa Marinho
  *
- * Gerenciador v1.0
+ * Gerenciador v1.1
  *
  */
 //gerenciador.c
@@ -243,8 +243,8 @@ int main(void){
 		printf("Erro de alocação.");
 		return 1;
 	}
-	lista->inicio = NULL; //Adicionei essas duas linhas aqui pois se não o programa
-    lista->fim = NULL;    //dava erro ao tentar adicionar produtos
+	lista->inicio = NULL; 
+    lista->fim = NULL;    
 	int opc;
 	do{
 		exibirMenu();
