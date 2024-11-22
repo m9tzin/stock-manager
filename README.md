@@ -31,7 +31,7 @@ Este problema pode ser utilizado em várias situações, como em empresas de peq
 A bibliografia pertinente a este projeto abrange várias fontes que debatem os benefícios e a aplicação de listas encadeadas, ilustradas na *Figura 1*, e métodos de ordenação como o Merge Sort. Abdala (2011) afirma que "listas encadeadas são a estrutura de dados mais simples concebível, excetuando-se naturalmente os arrays". Esta definição oferece uma fundamentação robusta para compreender a estrutura básica do gerenciador de estoque sugerido. Abdala destaca as vantagens das listas encadeadas sobre os arrays, enfatizando a flexibilidade na alocação dinâmica de memória, crucial para administrar um inventário de produtos que pode mudar ao longo do tempo.
 
 Além disso, uma célula de lista encadeada é composta por dois elementos principais: o dado efetivo e um ponteiro que aponta para o próximo elemento da lista. Essa estrutura é fundamental para organizar os produtos no sistema de gerenciamento de estoque, onde cada nó representa um item. O ponteiro permite a conexão entre os itens, facilitando a navegação e a manipulação da lista. Com essa abordagem, é possível adicionar ou remover itens de forma eficiente, mantendo a integridade da estrutura de dados e garantindo que as operações sejam realizadas de maneira rápida e organizada.
-![Linked List](https://github.com/user-attachments/assets/f41de5a8-d01e-4529-9ff0-e0e51f8c2568)
+![Linked List](assets/Linked%20List.png)
 *Figura 1. Exemplificação de listas simplesmente e duplamente encadeada*
 
 Complementando o entendimento sobre a ordenação dos dados, o artigo de *freeCodeCamp* sobre algoritmos de ordenação esclarece que "o Merge Sort é um algoritmo eficiente para ordenar grandes volumes de dados, com uma complexidade O(n log n), o que o torna ideal para organizar grandes conjuntos de informações", como os encontrados em sistemas de inventário. Esse algoritmo será fundamental para otimizar o processo de organização do estoque, garantindo que a busca e a consulta de produtos sejam realizadas rapidamente, mesmo com o aumento do número de itens.
@@ -68,7 +68,7 @@ Para se chegar na solução, foi seguido um fluxo lógico de escolhas e operaç�
 
 *Tabela 1. Resumo das principais operações do sistema*
 
-![Diagrama 1 JPG](https://github.com/user-attachments/assets/3390aac1-d181-4c9e-848f-612f101a09ca)
+![Diagrama 1 JPG](assets/Diagrama%201%20JPG.jpg)
 *Figura 2. Diagrama dos passos seguidos e escolhas feitas para o algoritmo*
 
 As operações do gerenciador de estoque são baseadas em manipulações de uma lista encadeada, permitindo o gerenciamento dinâmico dos produtos. A inserção de produtos adiciona um novo item no final da lista. Durante esse processo, os dados do produto, como ID, distância e data de entrega, são coletados, e um novo nó é alocado e conectado à estrutura existente. Essa abordagem é eficiente para manter a organização da lista e facilita futuras operações. 
@@ -91,7 +91,7 @@ Portanto, a metodologia adotada foca na modularidade e na eficiência do sistema
 
 ## Apêndices
 ### Apêndice A - Diagrama de Blocos que ilustra o funcionamento geral do programa
-![Diagrama de Blocos de Funcionamento](https://github.com/user-attachments/assets/9879f17e-d618-4387-90a5-45ac55f133f4)
+![Diagrama de Blocos de Funcionamento](assets/Diagrama%20de%20Blocos%20de%20Funcionamento.png)
 <!-- ROADMAP -->
 ## Roadmap
 - [x] Criação do repositório
