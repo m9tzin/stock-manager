@@ -40,7 +40,7 @@ Adicionalmente, Jim Hearson, em seu artigo sobre gerenciamento de estoque, desta
 
 O dataset a ser explorado no projeto consiste em uma série de dados fictícios de um estoque de produtos. Cada item do estoque será representado como um nó de uma lista encadeada, contendo as informações essenciais do produto, como ID, distância de entrega e data de entrega. Este dataset simula um cenário realista de uma empresa que precisa organizar e consultar rapidamente seu inventário, garantindo que as operações de inserção, remoção e busca sejam realizadas de forma eficiente.
 
-Para o desenvolvimento deste projeto de gerenciamento de estoque utilizando listas encadeadas e Merge Sort, serão revisados dois métodos principais:
+Para o desenvolvimento deste projeto de gerenciamento de estoque, serão revisados dois métodos principais:
 
 1. **Listas Encadeadas**: Uma estrutura de dados dinâmica que permite a inserção e remoção eficientes de itens em tempo de execução. Esse método será utilizado para armazenar e organizar os produtos no estoque, garantindo que a memória seja alocada conforme necessário e sem a restrição de alocação contígua, como nos arrays.
 
