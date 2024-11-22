@@ -55,7 +55,7 @@ int verificarID(Lista *l, int ID){
 	return 0;
 }
 
-void adicionarProduto(Lista *l) { // Eu tive que modificar a função para ficar desse jeito por que se não os produtos novos iam pro fim da lista
+void adicionarProduto(Lista *l) { 
     Produto *novo = (Produto*)malloc(sizeof(Produto));
     if (l == NULL) {
         printf("Erro: lista não inicializada.\n"); // Verificando se a lista inicializou corretamente
