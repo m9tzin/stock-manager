@@ -84,8 +84,8 @@ Portanto, a metodologia adotada foca na modularidade e na eficiência do sistema
 
 ## Referências
 1. DELGADO, Maria Betania Darcie Pessoa; DOS SANTOS BARBOSA, Amanda. A logística de entrega como um diferencial competitivo no comércio eletrônico. Congresso de Tecnologia-Fatec Mococa, 2023.
-2. ABDALA, Daniel Duarte. *Listas encadeadas*. Disponível em: https://www.facom.ufu.br/~abdala/DAS5102/TEO_ListasEncadeadas.pdf
-3. FREECODECAMP. *Algoritmos de ordenação explicados*. Disponível em: https://www.freecodecamp.org/portuguese/news/algoritmos-de-ordenacao-explicados-com-exemplos-em-python-java-e-c/
+2. ABDALA, Daniel Duarte. *Listas encadeadas*. Disponível em: https://www.facom.ufu.br/~abdala/DAS5102/TEO_ListasEncadeadas.pdf. Acesso em: 19 nov. 2024.
+3. FREECODECAMP. *Algoritmos de ordenação explicados*. Disponível em: https://www.freecodecamp.org/portuguese/news/algoritmos-de-ordenacao-explicados-com-exemplos-em-python-java-e-c/. Acesso em: 19 nov. 2024.
 4. DIETZ, Paul F. *Maintaining order in a linked list. In: Proceedings of the fourteenth annual ACM symposium on Theory of computing*. 1982. p. 122-127.
 5. HEARSON, Jim. *O que é gerenciamento de estoque? Disponível em: https://www.oracle.com/br/scm/inventory-management/what-is-inventory-management/*. Acesso em: 19 nov. 2024.
 
