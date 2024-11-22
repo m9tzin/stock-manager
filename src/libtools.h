@@ -1,3 +1,4 @@
+//libtools.h
 #ifndef LIBTOOLS_H
 #define LIBTOOLS_H
 
@@ -12,12 +13,16 @@ void clear_input_buffer() {
 
 
 // int
-int get_int(const char *input){
-	int value;
-	printf("%s", input);
-	scanf("%d", &value);
-	clear_input_buffer();
-	return value;
+int get_int(const char *input) {
+    int value;
+    printf("%s", input);
+    if (scanf("%d", &value) != 1) {
+        printf("Erro: entrada inválida.\n");
+        clear_input_buffer();
+        return -1; // Valor inválido para sinalizar erro caso o usuário
+    }              // digite um letra ao invés de número
+    clear_input_buffer();
+    return value;
 }
 
 // float

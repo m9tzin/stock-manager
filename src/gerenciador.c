@@ -5,11 +5,11 @@
  * Gabriel Sales Gerardo
  * João Pedro da Costa Reis
  * Matheus Sousa Marinho
- * 
+ *
  * Gerenciador v1.0
  *
  */
-
+//gerenciador.c
 #include <stdio.h>
 #include <stdlib.h>
 #include "libtools.h"
@@ -19,7 +19,7 @@
 typedef struct Produto{
 	int ID;
 	int distancia;
-	int data_entrega; 
+	int data_entrega;
 	struct Produto *prox;
 }Produto;
 
@@ -55,32 +55,45 @@ int verificarID(Lista *l, int ID){
 	return 0;
 }
 
-void adicionarProduto(Lista *l){
-	Produto *novo = (Produto*)malloc(sizeof(Produto));
-	if(novo == NULL){
-		printf("Erro de alocação.");
-	}
-	// Dados do Produto
-	novo->ID = get_int("Insira ID do produto: ");	//get(ID);
-	
-	if(verificarID(l, novo->ID)){
-		printf("\nID já existente. Insira outro.\n\n");
-		free(novo);
-		return;
-	}
-	
-	novo->distancia = get_int("Insira a distancia a percorrer (em km): ");	//get(dist);
-	novo->data_entrega = get_int("Insira a data de entrega no formato DDMMAAA: ");	//get(data_entrega);
+void adicionarProduto(Lista *l) { // Eu tive que modificar a função para ficar desse jeito por que se não os produtos novos iam pro fim da lista
+    Produto *novo = (Produto*)malloc(sizeof(Produto));
+    if (l == NULL) {
+        printf("Erro: lista não inicializada.\n"); // Verificando se a lista inicializou corretamente
+        return;
+    }
+    if (novo == NULL) {
+        printf("Erro de alocação.");
+        return;
+    }
+    // Dados do Produto
+    novo->ID = get_int("Insira ID do produto: ");
+    if (novo->ID == -1) {
+        free(novo);
+        return;
+    }
 
-	if(l->inicio == NULL){
-		l->inicio = novo;
-		novo->prox = NULL;
-		l->fim = novo;
-	}else{
-		novo->prox = l->inicio;
-		l->inicio = novo;
-	}
+    if (verificarID(l, novo->ID)) {
+        printf("\nID já existente. Insira outro.\n\n");
+        free(novo);
+        return;
+    }
+
+    novo->distancia = get_int("Insira a distancia a percorrer (em km): ");
+    novo->data_entrega = get_int("Insira a data de entrega no formato DDMMAAAA: ");
+
+    novo->prox = NULL; // O novo produto será o último, então seu ponteiro 'prox' deve ser NULL.
+
+    if (l->inicio == NULL) {
+        // Se a lista estiver vazia, o novo produto é o primeiro e o último.
+        l->inicio = novo;
+        l->fim = novo;
+    } else {
+        // Caso contrário, adicionamos o novo produto no final da lista.
+        l->fim->prox = novo;
+        l->fim = novo; // Agora, o 'fim' aponta para o novo produto.
+    }
 }
+
 
 Produto *anterior;
 
@@ -94,7 +107,7 @@ void removerProduto(Lista *l){
 		aux = l->inicio;
 		anterior = NULL;
 		find = 0;
-		
+
 		while(aux != 0 && aux->ID != num){
 			anterior = aux;
 			aux = aux->prox;
@@ -119,7 +132,7 @@ void removerProduto(Lista *l){
 void exibirProdutos(Lista *l) {
     int i = 0;
     Produto *aux = l->inicio;
-    
+
 
     if (aux == NULL) {
         printf("\n==========================================================\n");
@@ -147,7 +160,7 @@ void exibirProdutos(Lista *l) {
 }
 
 // SORTING
-// comparar -> dividir -> mesclar -> ordenar 
+// comparar -> dividir -> mesclar -> ordenar
 // se x-y>0 logo x>y, se x-y<0, logo y>x.
 int comparar(Produto *a, Produto *b){
 	// Primeiro caso: data de entrega
@@ -170,7 +183,7 @@ Produto* dividir(Produto *inicio){
 
 	while( rapido != NULL && rapido->prox != NULL){
 		anterior = lento;
-		lento = lento->prox; // lentos à esquerda 
+		lento = lento->prox; // lentos à esquerda
 		rapido = rapido->prox->prox; // rapidos à direita
 	}
 	if( anterior != NULL){
@@ -183,7 +196,7 @@ Produto* dividir(Produto *inicio){
 // e - esquerda, d - direita
 Produto* mesclar(Produto *e, Produto *d, int(*comparar)(Produto*, Produto*)){
 	Produto *resultado = NULL;
-		
+
 	if(e == NULL){
 		return d;
 	}
@@ -205,11 +218,11 @@ Produto* ordenarProdutos(Produto *inicio, int(*comparar)(Produto*, Produto*)){
 	if(inicio == NULL || inicio->prox == NULL){
 		return inicio;
 	}
-	
+
 	Produto *meio = dividir(inicio);
 	Produto *e = ordenarProdutos(inicio, comparar);
 	Produto *d = ordenarProdutos(meio, comparar);
-	
+
 		return mesclar(e, d, comparar);
 }
 
@@ -221,33 +234,36 @@ void ordenarLista(Lista *l){
 	}
 	l->inicio = ordenarProdutos(l->inicio, comparar);
 	printf("\nLista ordenada com sucesso!\n");
-	
+
 }
 
 int main(void){
 	Lista *lista = (Lista*)malloc(sizeof(Lista));
 	if(lista == NULL){
 		printf("Erro de alocação.");
+		return 1;
 	}
+	lista->inicio = NULL; //Adicionei essas duas linhas aqui pois se não o programa
+    lista->fim = NULL;    //dava erro ao tentar adicionar produtos
 	int opc;
-	do{	
+	do{
 		exibirMenu();
-		opc = get_int("Insira uma opção:\n ");	
+		opc = get_int("Insira uma opção:\n ");
 			switch(opc){
-				case 1: 
+				case 1:
 					adicionarProduto(lista);
 					break;
-				case 2: 
+				case 2:
 					removerProduto(lista);
 					break;
-				case 3: 
+				case 3:
 					exibirProdutos(lista);
 					printf("\n\n");
 					break;
-				case 4: 
+				case 4:
 					ordenarLista(lista);
 					break;
-				case 5: 
+				case 5:
 					break;
 			}
 		}while(opc != 5);
