@@ -149,7 +149,7 @@ void exibirProdutos(Lista *l) {
         printf("----------------------------------------------------------\n");
         printf("|| Produto [%d]                                         ||\n", i);
         printf("|| ID: %-47d ||\n", aux->ID);
-        printf("|| Distância (km): %-35d ||\n", aux->distancia);
+        printf("|| Distância (km): %-34d ||\n", aux->distancia);
         printf("|| Data de entrega (DDMMAAAA): %-23d ||\n", aux->data_entrega);
         printf("----------------------------------------------------------\n");
         aux = aux->prox;
