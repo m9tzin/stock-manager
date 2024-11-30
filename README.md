@@ -51,6 +51,7 @@ A avaliação dos resultados será baseada em duas métricas que buscam medir ta
 O projeto, como dito anteriormente, faz o uso da biblioteca auxiliar `libtools.h`. A descrição das funções que a biblioteca oferece está presente no Apêndice C do relatório.
 
 O arquivo principal do projeto, gerenciador.c, contém a lógica central da execução do sistema, reunindo as operações principais do programa. A estrutura Produto define os dados de um produto, como o número do pedido (NP), a distância a percorrer, a data de entrega e um ponteiro para o próximo produto. Já a estrutura Lista representa a lista de produtos, com dois ponteiros: um para o primeiro produto ("inicio") e outro para o último ("fim"). A lista encadeada é gerenciada por esses ponteiros, permitindo manipular os dados de forma eficiente. As funções do gerenciador de estoque são descritas a seguir:
+
 1.**criarLista**: Cria uma nova lista encadeada, alocando dinamicamente memória para um objeto do tipo *Lista* e inicializando os ponteiros "inicio" e "fim" como "NULL", indicando que a lista está vazia.
 
 2.**verificarNP**: Verifica se um número de pedido já existe na lista. A função percorre todos os produtos cadastrados, comparando o número de pedido de cada um com o valor fornecido. 
