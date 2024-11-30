@@ -3,6 +3,7 @@
 #define LIBTOOLS_H
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 // Func
@@ -11,27 +12,30 @@ void clear_input_buffer() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-
 // int
 int get_int(const char *input) {
     int value;
     printf("%s", input);
     if (scanf("%d", &value) != 1) {
-        printf("Erro: entrada inv·lida.\n");
+        printf("Erro: entrada inv√°lida.\n");
         clear_input_buffer();
-        return -1; // Valor inv·lido para sinalizar erro caso o usu·rio
-    }              // digite um letra ao invÈs de n˙mero
+        return -1; // Valor inv√°lido para sinalizar erro caso o usu√°rio
+    }              // digite um letra ao inv√©s de n√∫mero
     clear_input_buffer();
     return value;
 }
 
 // float
 float get_float(const char *input){
-	float value;
-	printf("%s", input);
-	scanf("%f", &value);
-	clear_input_buffer();
-	return value;
+    float value;
+    printf("%s", input);
+    if (scanf("%f", &value) != 1) { // Verifica entrada inv√°lida
+        printf("Erro: entrada inv√°lida.\n");
+        clear_input_buffer();
+        return -1.0; // Valor especial para indicar erro
+    }
+    clear_input_buffer();
+    return value;
 }
 
 //string
@@ -57,10 +61,12 @@ void exibirMenu() {
     printf("|| (2) Remover produto                                  ||\n");
     printf("|| (3) Exibir produtos                                  ||\n");
     printf("|| (4) Ordenar lista para entrega                       ||\n");
-    printf("|| (5) Sair                                             ||\n");
+    printf("|| (5) Ler Arquivo                                      ||\n");
+    printf("|| (6) Sair                                             ||\n");
     printf("||------------------------------------------------------||\n");
     printf("==========================================================\n");
 }
+
 
 #endif
 
