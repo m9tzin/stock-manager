@@ -95,7 +95,7 @@ O desenvolvimento do sistema de gerenciamento de estoque demonstrou a eficácia 
 A opção por listas encadeadas revelou-se vantajosa no contexto do projeto, especialmente devido à flexibilidade que oferecem para manipulação de dados. Diferentemente dos arrays, as listas encadeadas não exigem alocação de memória contínua, permitindo que o programa lide de forma eficiente com um número variável de elementos. Além disso, a remoção e a inserção de elementos são operações realizadas diretamente com ponteiros, evitando o custo de deslocamento de elementos típico de arrays. Essa característica foi particularmente importante ao gerenciar pedidos em que modificações frequentes na estrutura eram necessárias. A escolha das listas também simplificou a implementação de critérios múltiplos de comparação durante a ordenação, uma vez que os dados de cada pedido foram armazenados como structs, facilitando o acesso e a manipulação das informações.
 
 O Merge Sort foi escolhido como o algoritmo de ordenação devido à sua complexidade temporal constante de O(n log ⁡n), independentemente da ordem inicial dos dados. Essa estabilidade mostrou-se crucial no contexto de uma lista encadeada, onde não há acesso direto a índices como nos arrays. Além disso, o Merge Sort é mais adequado para listas encadeadas porque evita a necessidade de acesso repetido aos elementos intermediários, ao contrário do Quick Sort, que requer particionamento e pode atingir um desempenho de O(n²) em seu pior caso. Comparado ao Bubble Sort, cuja complexidade é O(n²) mesmo nos cenários intermediários, o Merge Sort apresentou maior eficiência e constância, especialmente ao lidar com grandes volumes de dados e múltiplos critérios de comparação. É possível observar como as estruturas de ordenação se comportam com o aumento de elementos a serem ordenados, intensificando o número de operações necessárias para a organização da lista, através da figura 1.
-![Gráfico Merge](https://github.com/user-attachments/assets/13257af1-0f32-474e-8539-b22bd4d6af8b)
+![Gráfico Merge](/assets/Gráfico%20Merge.png)
 
 Figura 1. Gráfico mostrando a complexidade das estruturas de ordenação
 
@@ -114,10 +114,10 @@ Por fim, o projeto mostrou como a priorização de critérios de ordenação pod
 
 ## Apêndices
 ### Apêndice A - Diagrama dos passos seguidos e escolhas feitas para o algoritmo
-![Diagrama 1 JPG](https://github.com/user-attachments/assets/02bd1f44-79c5-4a66-ad8e-f4c1279c3434)
+![Diagrama 1 JPG](/assets/Diagrama%201%20JPG.jpg)
 
 ### Apêndice B - Diagrama de Blocos que Ilustra o Funcionamento do Programa
-![Diagrama de Blocos de Funcionamento](https://github.com/user-attachments/assets/0af87a9d-acd9-4022-88af-83e48f5a808a)
+![Diagrama de Blocos de Funcionamento](/assets/Diagrama%20de%20Blocos%20de%20Funcionamento.png)
 
 ### Apêndice C - Descrição das funções oferecidas pela biblioteca `libtools.h`
 A biblioteca oferece funções de leitura de dados do tipo “int”, “float” e “strings”, além de garantir que o buffer de entrada seja limpo para evitar a leitura errônea de dados. O uso dessa biblioteca permite que a lógica de negócios do sistema de gerenciamento de estoque seja isolada das complexidades da implementação das estruturas de dados e algoritmos, facilitando a integração e garantindo um código mais organizado e eficiente.Ambos os métodos serão integrados de forma a otimizar a manipulação e a organização do estoque, permitindo uma gestão eficiente dos produtos armazenados. Entre as funções oferecidas pela biblioteca, estão: 
