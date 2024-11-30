@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "libtools.h"
+#include <time.h>
 
 // STRUCT
 
@@ -120,7 +121,6 @@ void adicionarProduto(Lista *l) {
         l->fim = novo;
     }
 }
-
 
 Produto *anterior;
 
@@ -330,7 +330,6 @@ void liberarLista(Lista *l) {
     free(l);  // Libera a estrutura da lista
     printf("Memória liberada com sucesso.\n");
 }
-
 
 int main(void) {
     Lista *lista = criarLista();  // Chama a função criarLista
