@@ -7,9 +7,9 @@ def gerar_dados_aleatorios(n):
         "NP": [random.randint(1, 200) for _ in range(n)],  # Números de Pedido aleatórios entre 1 e 200
         "Distancia": [round(random.uniform(10.0, 100.0), 2) for _ in range(n)],  # Distâncias entre 10.0 e 100.0 km
         "DataEntrega": [
-            int(f"{random.randint(2024, 2027)}{random.randint(1, 28):02}{random.randint(1, 12):02}")
+            int(f"{random.randint(2024, 2027)}{random.randint(1, 12):02}{random.randint(1, 28):02}")
             for _ in range(n)
-        ],  # Data de entrega aleatória no formato AAAADDMM
+        ],  # Data de entrega aleatória no formato AAAAMMDD
     }
     
     df = pd.DataFrame(dados)
