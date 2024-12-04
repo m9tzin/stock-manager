@@ -143,11 +143,11 @@ cd stock-manager/src
 ```
 ### 2. Compile:
 ```bash 
-gcc -o gerenciar gererenciador.c
+gcc -o nome-do-seu-executavel gererenciador.c
 ```
 ### 3. Run file:
 ```bash 
-./gerenciar
+./nome-do-seu-executavel
 ```
 
 ## License
