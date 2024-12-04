@@ -24,13 +24,14 @@ Com o aumento da demanda por serviços de transporte, especialmente após a pand
 
 <!-- ROADMAP -->
 ## Roadmap
-- [x] Criação do repositório
-- [x] Identificar as estruturas de dados a serem utilizadas
-- [x] Implementar estruturas de dados e bibliotecas
-- [x] Planejamento da logica de comparação das mercadorias
-- [x] Interface de interação com usuário
-- [x] Função para remover produtos by ID
-- [ ] Verificações de inputs inválidos
+- [x] Criação do repositório.
+- [x] Identificar as estruturas de dados a serem utilizadas.
+- [x] Implementar estruturas de dados e bibliotecas.
+- [x] Planejamento da logica de comparação das mercadorias.
+- [x] Interface de interação com usuário.
+- [x] Função para remover produtos by ID.
+- [x] Verificações de inputs inválidos.
 - [x] Função compararProdutos();
 - [x] Função ordenarProdutos(); 
-- [x] Verificação dos IDs inseridos
+- [x] Verificação dos IDs inseridos.
+- [x] Criação de um DataFrame para geração de CSVs aleatórios.
