@@ -6,7 +6,7 @@
  * João Pedro da Costa Reis
  * Matheus Sousa Marinho
  *
- * Gerenciador v1.1
+ * Gerenciador v3.14
  *
  */
 
@@ -159,6 +159,7 @@ void removerProduto(Lista *l) {
     }
 }
 
+// Função responsável pela leitura do CSV
 void lerCSV(Lista *l, const char *nome_arquivo) {
     FILE *arquivo = fopen(nome_arquivo, "r");
     if (arquivo == NULL) {
@@ -183,7 +184,7 @@ void lerCSV(Lista *l, const char *nome_arquivo) {
         if (sscanf(linha, "%d,%f,%d", &novo->NP, &novo->distancia, &novo->data_entrega) == 3) {
             // Verifica se o ID já existe na lista
             if (verificarNP(l, novo->NP)) {
-                printf("Produto com N° do Pedido %d já existe. Não será adicionado.\n", novo->NP);
+                printf("Produto com N° do Pedido [%d] já existe. Não será adicionado.\n", novo->NP);
                 free(novo); // Libera a memória alocada para o produto não adicionado
             } else {
                 novo->prox = NULL;
@@ -207,11 +208,10 @@ void lerCSV(Lista *l, const char *nome_arquivo) {
     printf("Produtos carregados com sucesso!\n");
 }
 
-
+// Exibindo produtos
 void exibirProdutos(Lista *l) {
     int i = 0;
     Produto *aux = l->inicio;
-
 
     if (aux == NULL) {
         printf("\n==========================================================\n");
@@ -229,7 +229,7 @@ void exibirProdutos(Lista *l) {
         printf("|| Produto [%d]                                         ||\n", i+1);
         printf("|| N° do Pedido: %-36d ||\n", aux->NP);
         printf("|| Distância (km): %-34.2f ||\n", aux->distancia);
-        printf("|| Data de entrega (DDMMAAAA): %-23d ||\n", aux->data_entrega);
+        printf("|| Data de entrega (AAAADDMM): %-23d ||\n", aux->data_entrega);
         printf("----------------------------------------------------------\n");
         aux = aux->prox;
         i++;
@@ -273,6 +273,7 @@ Produto* dividir(Produto *inicio){
 	return lento;
 }
 
+// Iniciando o processo de MergeSort
 // Passo do Merge
 // e - esquerda, d - direita
 Produto* mesclar(Produto *e, Produto *d, int(*comparar)(Produto*, Produto*)){
@@ -294,7 +295,6 @@ Produto* mesclar(Produto *e, Produto *d, int(*comparar)(Produto*, Produto*)){
 	return resultado;
 }
 
-// mergeSort
 Produto* ordenarProdutos(Produto *inicio, int(*comparar)(Produto*, Produto*)){
 	if(inicio == NULL || inicio->prox == NULL){
 		return inicio;
@@ -307,7 +307,6 @@ Produto* ordenarProdutos(Produto *inicio, int(*comparar)(Produto*, Produto*)){
 		return mesclar(e, d, comparar);
 }
 
-// func completa
 void ordenarLista(Lista *l){
 	if(l->inicio == NULL){
 		printf("Nenhum produto cadastrado. Impossível realizar a ordenação.");
