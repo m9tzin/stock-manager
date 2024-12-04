@@ -133,3 +133,22 @@ A biblioteca oferece funções de leitura de dados do tipo “int”, “float�
 4.**get_string**: Permite a leitura de uma linha de texto fornecida pelo usuário, armazenando-a em um buffer de string cujo tamanho máximo é especificado pelo parâmetro length. Após a leitura, a função remove o caractere de nova linha (\n) no final da string, quando presente, garantindo que a string armazenada esteja corretamente formatada e sem caracteres desnecessários. Essa função é útil para capturar entradas de texto livre e tratar corretamente o que é inserido pelo usuário.
 
 5.**exibirMenu**: Mostra o menu principal do sistema de gerenciamento de estoques. Ela apresenta ao usuário uma série de opções, como adicionar ou remover produtos, exibir a lista de produtos, ordenar os itens conforme a data de entrega, ou carregar dados de um arquivo.
+
+<!-- SETUP -->
+## Setup
+### 1. Clone the repository:
+```bash 
+git clone git@github.com:m9tzin/stock-manager.git
+cd stock-manager/src
+```
+### 2. Compile:
+```bash 
+gcc -o gerenciar gererenciador.c
+```
+### 3. Run file:
+```bash 
+./gerenciar
+```
+
+## License
+Distributed under the MIT License. See `LICENSE.txt` for more information.
