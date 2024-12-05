@@ -105,7 +105,7 @@ void adicionarProduto(Lista *l) {
             printf("Data inválida. Por favor, insira um número inteiro no formato correto.\n");
             while (getchar() != '\n'); // Limpa o buffer de entrada
         } else if (novo->data_entrega <= 0) {
-            printf("A data de entrega deve ser um número positivo no formato DDMMAAAA.\n");
+            printf("A data de entrega deve ser um número positivo no formato AAAAMMDD.\n");
         } else {
             valido = 1; // Entrada válida
         }
