@@ -44,7 +44,6 @@ Lista* criarLista(){
 }
 
 // FUNC
-
 int verificarNP(Lista *l, int NP) {
     Produto *aux = l->inicio;
     while (aux != NULL) {
@@ -325,7 +324,6 @@ void liberarLista(Lista *l) {
         aux = aux->prox;      // Avança para o próximo
         free(temp);           // Libera o nó atual
     }
-
     free(l);  // Libera a estrutura da lista
     printf("Memória liberada com sucesso.\n");
 }

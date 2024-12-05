@@ -19,8 +19,8 @@ int get_int(const char *input) {
     if (scanf("%d", &value) != 1) {
         printf("Erro: entrada inválida.\n");
         clear_input_buffer();
-        return -1; // Valor inválido para sinalizar erro caso o usuário
-    }              // digite um letra ao invés de número
+        return -1; 
+    }              
     clear_input_buffer();
     return value;
 }
@@ -29,10 +29,10 @@ int get_int(const char *input) {
 float get_float(const char *input){
     float value;
     printf("%s", input);
-    if (scanf("%f", &value) != 1) { // Verifica entrada inválida
+    if (scanf("%f", &value) != 1) { 
         printf("Erro: entrada inválida.\n");
         clear_input_buffer();
-        return -1.0; // Valor especial para indicar erro
+        return -1.0; 
     }
     clear_input_buffer();
     return value;
@@ -42,7 +42,6 @@ float get_float(const char *input){
 void get_string(const char *input, char *str, int length){
 	printf("%s", input);
 	fgets(str, length, stdin);
-	//remove last caracter (null)
 	size_t len = strlen(str)-1;
 	if(str[len] == '\n'){
 		str[len] = '\0';
@@ -66,7 +65,6 @@ void exibirMenu() {
     printf("||------------------------------------------------------||\n");
     printf("==========================================================\n");
 }
-
 
 #endif
 
