@@ -103,7 +103,7 @@ A opção por listas encadeadas revelou-se vantajosa no contexto do projeto, esp
 
 O Merge Sort foi escolhido como o algoritmo de ordenação devido à sua complexidade temporal constante de O(n log ⁡n), independentemente da ordem inicial dos dados. Essa estabilidade mostrou-se crucial no contexto de uma lista encadeada, onde não há acesso direto a índices como nos arrays. Além disso, o Merge Sort é mais adequado para listas encadeadas porque evita a necessidade de acesso repetido aos elementos intermediários, ao contrário do Quick Sort, que requer particionamento e pode atingir um desempenho de O(n²) em seu pior caso. Comparado ao Bubble Sort, cuja complexidade é O(n²) mesmo nos cenários intermediários, o Merge Sort apresentou maior eficiência e constância, especialmente ao lidar com grandes volumes de dados e múltiplos critérios de comparação. É possível observar como as estruturas de ordenação se comportam com o aumento de elementos a serem ordenados, intensificando o número de operações necessárias para a organização da lista, através da figura 1.
 
-![Gráfico Merge](https://github.com/user-attachments/assets/bf5b9925-9d06-4b25-bc40-e8fce34e29cd)
+![Gráfico Merge](/assets/Gráfico%20Merge.png)
 
 Figura 1. Gráfico mostrando a complexidade das estruturas de ordenação
 
@@ -122,10 +122,11 @@ Por fim, o projeto mostrou como a priorização de critérios de ordenação pod
 
 ## Apêndices
 ### Apêndice A - Diagrama dos passos seguidos e escolhas feitas para o algoritmo
-![DiagramaJPG](https://github.com/user-attachments/assets/4c2ff5fe-57bb-46fa-b664-10a2cfcf9aa8)
+![Diagrama JPG](/assets/DiagramaJPG.jpg)
+
 
 ### Apêndice B - Diagrama de Blocos que Ilustra o Funcionamento do Programa
-![Diagrama_V3](https://github.com/user-attachments/assets/f421f3fa-b141-4e2e-a76a-29842293c0bc)
+![Diagrama V3](/assets/Diagrama_V3.png)
 
 ### Apêndice C - Descrição das funções oferecidas pela biblioteca `libtools.h`
 A biblioteca oferece funções de leitura de dados do tipo “int”, “float” e “strings”, além de garantir que o buffer de entrada seja limpo para evitar a leitura errônea de dados. O uso dessa biblioteca permite que a lógica de negócios do sistema de gerenciamento de estoque seja isolada das complexidades da implementação das estruturas de dados e algoritmos, facilitando a integração e garantindo um código mais organizado e eficiente.Ambos os métodos serão integrados de forma a otimizar a manipulação e a organização do estoque, permitindo uma gestão eficiente dos produtos armazenados. Entre as funções oferecidas pela biblioteca, estão: 
@@ -141,7 +142,8 @@ A biblioteca oferece funções de leitura de dados do tipo “int”, “float�
 5.**exibirMenu**: Mostra o menu principal do sistema de gerenciamento de estoques. Ela apresenta ao usuário uma série de opções, como adicionar ou remover produtos, exibir a lista de produtos, ordenar os itens conforme a data de entrega, ou carregar dados de um arquivo.
 
 ### Apêndice D - Exemplo do formato do arquivo CSV suportado pelo programa
-[![apêndice D](https://github.com/user-attachments/assets/f48bffc5-9763-4c76-b3a9-3aa44eddd3e9)](https://github.com/m9tzin/stock-manager/blob/3fa4dd0908c13eebf0a6d62472f3d59b9a65336c/assets/ap%C3%AAndice%20D.jpg)
+![Apêndice D](/assets/apêndice%20D.jpg)
+
 
 <!-- SETUP -->
 ## Setup
