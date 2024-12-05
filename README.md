@@ -119,7 +119,7 @@ Por fim, o projeto mostrou como a priorização de critérios de ordenação pod
 ![Diagrama 1 JPG](/assets/Diagrama%201%20JPG.jpg)
 
 ### Apêndice B - Diagrama de Blocos que Ilustra o Funcionamento do Programa
-![Diagrama de Blocos de Funcionamento](/assets/Diagrama%20de%20Blocos%20de%20Funcionamento.png)
+assets/Diagrama de Blocos de Funcionamento.png
 
 ### Apêndice C - Descrição das funções oferecidas pela biblioteca `libtools.h`
 A biblioteca oferece funções de leitura de dados do tipo “int”, “float” e “strings”, além de garantir que o buffer de entrada seja limpo para evitar a leitura errônea de dados. O uso dessa biblioteca permite que a lógica de negócios do sistema de gerenciamento de estoque seja isolada das complexidades da implementação das estruturas de dados e algoritmos, facilitando a integração e garantindo um código mais organizado e eficiente.Ambos os métodos serão integrados de forma a otimizar a manipulação e a organização do estoque, permitindo uma gestão eficiente dos produtos armazenados. Entre as funções oferecidas pela biblioteca, estão: 
