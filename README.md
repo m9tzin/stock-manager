@@ -141,7 +141,7 @@ A biblioteca oferece funções de leitura de dados do tipo “int”, “float�
 5.**exibirMenu**: Mostra o menu principal do sistema de gerenciamento de estoques. Ela apresenta ao usuário uma série de opções, como adicionar ou remover produtos, exibir a lista de produtos, ordenar os itens conforme a data de entrega, ou carregar dados de um arquivo.
 
 ### Apêndice D - Exemplo do formato do arquivo CSV suportado pelo programa
-![apêndice D](https://github.com/user-attachments/assets/f48bffc5-9763-4c76-b3a9-3aa44eddd3e9)
+[![apêndice D](https://github.com/user-attachments/assets/f48bffc5-9763-4c76-b3a9-3aa44eddd3e9)](https://github.com/m9tzin/stock-manager/blob/3fa4dd0908c13eebf0a6d62472f3d59b9a65336c/assets/ap%C3%AAndice%20D.jpg)
 
 <!-- SETUP -->
 ## Setup
