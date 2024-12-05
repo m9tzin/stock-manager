@@ -67,9 +67,9 @@ O arquivo principal do projeto, gerenciador.c, contém a lógica central da exec
 O Merge Sort foi escolhido devido à sua complexidade de tempo estável de O(n log n), independentemente da ordem inicial dos dados, o que é crucial quando se lida com um grande número de pedidos desordenados. Comparado ao Bubble Sort, que possui complexidade de O(n²), o Merge Sort é muito mais eficiente em grandes listas, já que o Bubble Sort tende a ser muito lento em casos com muitos elementos. Por outro lado, o Quick Sort, embora também tenha complexidade O(n log n) em média, pode apresentar um desempenho pior de O(n²) em casos específicos, como quando a lista está quase ordenada. O Merge Sort, portanto, garante uma performance mais previsível e confiável para grandes volumes de dados, sendo mais adequado para o contexto do gerenciador de estoque.
 
 ## 3. Metodologia
-Para o desenvolvimento do gerenciador de estoque, foi seguida uma metodologia estruturada que combina a utilização de listas encadeadas como estrutura de dados, o algoritmo Merge Sort para ordenação eficiente, e a criação de uma biblioteca auxiliar, `libtools.h`, para simplificar as operações de leitura de inputs do usuário e a limpeza do buffer de entrada para evitar problemas com entradas inesperadas ou inválidas.
+O desenvolvimento do gerenciador de estoque seguiu uma metodologia estruturada, integrando o uso de listas encadeadas como estrutura de dados, o algoritmo Merge Sort para ordenação eficiente e uma biblioteca auxiliar, denominada `libtools.h`, que simplifica operações como leitura de entradas do usuário e limpeza do buffer de entrada, garantindo robustez contra entradas inválidas ou inesperadas.
 
-Para se chegar na solução, foi seguido um fluxo lógico de escolhas e operações para a “montagem” do algoritmo. A tabela 1 mostra as operações básicas oferecidas e o Apêndice A ilustra o passo a passo que foi seguido para o concebimento do programa:
+O processo foi conduzido com base em um fluxo lógico de escolhas e operações que fundamentaram a concepção do algoritmo. A Tabela 1 apresenta um resumo das funcionalidades básicas do sistema, enquanto o Apêndice A detalha o passo a passo seguido para o concebimento do programa.
 
 | Função | Descrição |
 |--------|-----------|
@@ -77,6 +77,8 @@ Para se chegar na solução, foi seguido um fluxo lógico de escolhas e operaç�
 | Remover Produto | Localiza e remove o produto da lista através do N° do Pedido |
 | Ordenar Lista | Aplica o Merge Sort para ordenar os produtos |
 | Exibir Lista | Exibe os produtos do estoque |
+| Ler Arquivo | Realiza a leitura e parsing de um arquivo CSV |
+| Sair | Encerra a execução do programa |
 
 *Tabela 1. Resumo das principais operações do sistema*
 
@@ -88,6 +90,10 @@ A operação de exibição de produtos percorre a lista do início ao fim, impri
 
 A operação de ordenar produtos no programa utiliza o algoritmo Merge Sort. O processo começa ao comparar os produtos com base em critérios hierárquicos: data de entrega, distância e NP. Esses critérios são avaliados sequencialmente para determinar a ordem. A lista é dividida em partes menores, utilizando ponteiros rápidos e lentos para localizar o ponto médio. Cada segmento é ordenado recursivamente e, em seguida, as sublistas são mescladas. Durante a mesclagem, o programa escolhe os produtos com base no critério de prioridade, ajustando os ponteiros para reconstruir a lista de forma ordenada. A função principal, “ordenarLista”, inicia o processo verificando se a lista contém elementos. Caso positivo, o Merge Sort é chamado para ordenar a lista desde o início. Após a conclusão, a lista é reorganizada de acordo com os critérios definidos, sendo ideal para priorizar entregas no estoque.
 
+A operação de leitura de arquivo permite o carregamento automático dos produtos no sistema a partir de um arquivo no formato CSV. Este arquivo deve conter os atributos de cada produto organizados em linhas, com os valores separados por vírgulas. Durante a leitura, o programa utiliza funções específicas para abrir o arquivo, processar cada linha, dividir os valores com base no delimitador (vírgula) e convertê-los nos atributos correspondentes de um novo nó da lista encadeada. Este nó é então inserido dinamicamente na lista, garantindo que os dados sejam integrados à lista de entrega. O formato do arquivo CSV está exemplificado no apêndice D.
+
+A funcionalidade de saída finaliza a execução do programa de forma segura. Antes de encerrar, o sistema libera toda a memória alocada dinamicamente para os nós da lista encadeada, prevenindo vazamentos de memória e garantindo o encerramento adequado do processo.
+
 Portanto, a metodologia adotada foca na modularidade e na eficiência do sistema, utilizando o Merge Sort para ordenar grandes listas de produtos e a biblioteca `libtools.h` para garantir a flexibilidade e simplificação do código. O funcionamento geral do programa está ilustrado no Apêndice B.
 
 ## 4. Resultados e Conclusões
@@ -97,7 +103,7 @@ A opção por listas encadeadas revelou-se vantajosa no contexto do projeto, esp
 
 O Merge Sort foi escolhido como o algoritmo de ordenação devido à sua complexidade temporal constante de O(n log ⁡n), independentemente da ordem inicial dos dados. Essa estabilidade mostrou-se crucial no contexto de uma lista encadeada, onde não há acesso direto a índices como nos arrays. Além disso, o Merge Sort é mais adequado para listas encadeadas porque evita a necessidade de acesso repetido aos elementos intermediários, ao contrário do Quick Sort, que requer particionamento e pode atingir um desempenho de O(n²) em seu pior caso. Comparado ao Bubble Sort, cuja complexidade é O(n²) mesmo nos cenários intermediários, o Merge Sort apresentou maior eficiência e constância, especialmente ao lidar com grandes volumes de dados e múltiplos critérios de comparação. É possível observar como as estruturas de ordenação se comportam com o aumento de elementos a serem ordenados, intensificando o número de operações necessárias para a organização da lista, através da figura 1.
 
-![Gráfico Merge](/assets/Gráfico%20Merge.png)
+![Gráfico Merge](https://github.com/user-attachments/assets/bf5b9925-9d06-4b25-bc40-e8fce34e29cd)
 
 Figura 1. Gráfico mostrando a complexidade das estruturas de ordenação
 
@@ -116,10 +122,10 @@ Por fim, o projeto mostrou como a priorização de critérios de ordenação pod
 
 ## Apêndices
 ### Apêndice A - Diagrama dos passos seguidos e escolhas feitas para o algoritmo
-![Diagrama 1 JPG](/assets/Diagrama%201%20JPG.jpg)
+![DiagramaJPG](https://github.com/user-attachments/assets/4c2ff5fe-57bb-46fa-b664-10a2cfcf9aa8)
 
 ### Apêndice B - Diagrama de Blocos que Ilustra o Funcionamento do Programa
-[assets/Diagrama de Blocos de Funcionamento.png](https://github.com/m9tzin/stock-manager/blob/1405cc29feacc6ff934029f9f95c1541aa201037/assets/Diagrama_V3.png)
+![Diagrama_V3](https://github.com/user-attachments/assets/f421f3fa-b141-4e2e-a76a-29842293c0bc)
 
 ### Apêndice C - Descrição das funções oferecidas pela biblioteca `libtools.h`
 A biblioteca oferece funções de leitura de dados do tipo “int”, “float” e “strings”, além de garantir que o buffer de entrada seja limpo para evitar a leitura errônea de dados. O uso dessa biblioteca permite que a lógica de negócios do sistema de gerenciamento de estoque seja isolada das complexidades da implementação das estruturas de dados e algoritmos, facilitando a integração e garantindo um código mais organizado e eficiente.Ambos os métodos serão integrados de forma a otimizar a manipulação e a organização do estoque, permitindo uma gestão eficiente dos produtos armazenados. Entre as funções oferecidas pela biblioteca, estão: 
@@ -133,6 +139,9 @@ A biblioteca oferece funções de leitura de dados do tipo “int”, “float�
 4.**get_string**: Permite a leitura de uma linha de texto fornecida pelo usuário, armazenando-a em um buffer de string cujo tamanho máximo é especificado pelo parâmetro length. Após a leitura, a função remove o caractere de nova linha (\n) no final da string, quando presente, garantindo que a string armazenada esteja corretamente formatada e sem caracteres desnecessários. Essa função é útil para capturar entradas de texto livre e tratar corretamente o que é inserido pelo usuário.
 
 5.**exibirMenu**: Mostra o menu principal do sistema de gerenciamento de estoques. Ela apresenta ao usuário uma série de opções, como adicionar ou remover produtos, exibir a lista de produtos, ordenar os itens conforme a data de entrega, ou carregar dados de um arquivo.
+
+### Apêndice D - Exemplo do formato do arquivo CSV suportado pelo programa
+![apêndice D](https://github.com/user-attachments/assets/f48bffc5-9763-4c76-b3a9-3aa44eddd3e9)
 
 <!-- SETUP -->
 ## Setup
