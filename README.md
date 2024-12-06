@@ -1,4 +1,4 @@
-# Gerenciador de Pedidos
+# Gerenciador de Estoque
 ## Algoritmo para otimização de entregas em centros de distribuição
 
 ### Autores
