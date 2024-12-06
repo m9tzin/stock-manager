@@ -16,7 +16,6 @@
 #include <time.h>
 
 // STRUCT
-
 typedef struct Produto {
     int NP;              // Número do Pedido
     float distancia;     // Distância a percorrer
@@ -30,7 +29,6 @@ typedef struct Lista{
 }Lista;
 
 // Pointers aux
-
 Produto *aux;
 Produto *anterior;
 
@@ -109,7 +107,7 @@ void adicionarProduto(Lista *l) {
             valido = 1; // Entrada válida
         }
     }
-
+    // Evitar a perca da lista.
     novo->prox = NULL;
 
     if (l->inicio == NULL) {
@@ -178,7 +176,6 @@ void lerCSV(Lista *l, const char *nome_arquivo) {
             fclose(arquivo);
             return;
         }
-
         // Parse da linha no formato CSV
         if (sscanf(linha, "%d,%f,%d", &novo->NP, &novo->distancia, &novo->data_entrega) == 3) {
             // Verifica se o ID já existe na lista
@@ -187,7 +184,6 @@ void lerCSV(Lista *l, const char *nome_arquivo) {
                 free(novo); // Libera a memória alocada para o produto não adicionado
             } else {
                 novo->prox = NULL;
-
                 // Inserir o novo produto na lista
                 if (l->inicio == NULL) {
                     l->inicio = novo;
@@ -202,7 +198,6 @@ void lerCSV(Lista *l, const char *nome_arquivo) {
             free(novo); // Libera a memória alocada para um produto inválido
         }
     }
-
     fclose(arquivo);
     printf("Produtos carregados com sucesso!\n");
 }

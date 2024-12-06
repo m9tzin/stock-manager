@@ -1,4 +1,4 @@
-# Gerenciador de Estoque
+# Gerenciador de Pedidos
 ## Algoritmo para otimização de entregas em centros de distribuição
 
 ### Autores
@@ -119,6 +119,9 @@ Por fim, o projeto mostrou como a priorização de critérios de ordenação pod
 3. FREECODECAMP. *Algoritmos de ordenação explicados*. Disponível em: https://www.freecodecamp.org/portuguese/news/algoritmos-de-ordenacao-explicados-com-exemplos-em-python-java-e-c/
 4. DIETZ, Paul F. *Maintaining order in a linked list. In: Proceedings of the fourteenth annual ACM symposium on Theory of computing*. 1982. p. 122-127.
 5. HEARSON, Jim. *O que é gerenciamento de estoque? Disponível em: https://www.oracle.com/br/scm/inventory-management/what-is-inventory-management/*. Acesso em: 19 nov. 2024.
+
+## Apresentação
+https://docs.google.com/presentation/d/13OgVZOCVku7zqfG5pzkPP247VS97e92B8tZFC5QbBHg/edit?usp=sharing
 
 ## Apêndices
 ### Apêndice A - Diagrama dos passos seguidos e escolhas feitas para o algoritmo
